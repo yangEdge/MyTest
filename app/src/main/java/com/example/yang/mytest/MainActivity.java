@@ -34,7 +34,7 @@ public class MainActivity extends Activity {
                 startActivity(intent);
                 finish();
             }
-        }, 0);
+        }, 2000);
 
     }
 
