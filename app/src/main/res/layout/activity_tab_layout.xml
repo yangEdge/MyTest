@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:id="@+id/tab"
+    tools:context=".TabLayout">
+
+    <FrameLayout
+        android:id="@+id/myFL"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"></FrameLayout>
+
+    <com.flyco.tablayout.CommonTabLayout
+        android:id="@+id/tl"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.6"
+        android:background="#ffffff"
+        app:tl_iconGravity="TOP"
+        app:tl_iconHeight="30dp"
+        app:tl_iconMargin="5dp"
+        app:tl_iconWidth="30dp"
+        app:tl_tab_space_equal="true"
+        app:tl_indicator_bounce_enable="true"
+        app:tl_indicator_color="#63C999"
+        app:tl_indicator_gravity="BOTTOM"
+        app:tl_indicator_height="0dp"
+        app:tl_textSelectColor="#63C999"
+        app:tl_textUnselectColor="#66000000"
+        app:tl_textsize="15sp"
+        app:tl_underline_color="#00000000"
+        app:tl_underline_gravity="TOP"
+        app:tl_underline_height="1dp">
+
+    </com.flyco.tablayout.CommonTabLayout>
+
+</LinearLayout>
