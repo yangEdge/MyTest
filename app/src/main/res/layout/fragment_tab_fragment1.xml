@@ -351,7 +351,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="温度设定值："
+                                        android:text="温度："
                                         android:textColor="#3BD0E2" />
 
                                     <TextView
@@ -381,7 +381,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="湿度设定值："
+                                        android:text="湿度："
                                         android:textColor="#3BD0E2" />
 
                                     <TextView
@@ -518,7 +518,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="温度设定值："
+                                        android:text="温度："
                                         android:textColor="#3BD0E2" />
 
                                     <TextView
@@ -548,7 +548,7 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="湿度设定值："
+                                        android:text="湿度："
                                         android:textColor="#3BD0E2" />
 
                                     <TextView

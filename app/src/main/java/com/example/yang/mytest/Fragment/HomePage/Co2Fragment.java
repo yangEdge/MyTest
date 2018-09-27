@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.yang.mytest.Bean.GetConfig;
+import com.example.yang.mytest.Bean.Config;
 import com.example.yang.mytest.Http.HttpUtils;
 import com.example.yang.mytest.Bean.ZhuYeReception;
 import com.example.yang.mytest.R;
@@ -80,18 +80,18 @@ public class Co2Fragment extends Fragment {
     }
 
     private void getConfig() {
-        Call<GetConfig> call = HttpUtils.request().getConfig();
-        call.enqueue(new Callback<GetConfig>() {
+        Call<Config> call = HttpUtils.request().getConfig();
+        call.enqueue(new Callback<Config>() {
 
             @Override
-            public void onResponse(Call<GetConfig> call, Response<GetConfig> response) {
-                GetConfig getConfig = response.body();
+            public void onResponse(Call<Config> call, Response<Config> response) {
+                Config getConfig = response.body();
                 co2_minCo2.setText(getConfig.getMinCo2() + "");
                 co2_maxCo2.setText(getConfig.getMaxCo2() + "");
             }
 
             @Override
-            public void onFailure(Call<GetConfig> call, Throwable throwable) {
+            public void onFailure(Call<Config> call, Throwable throwable) {
                 Log.e(TAG, "请求失败");
                 Log.e(TAG, throwable.getMessage());
             }

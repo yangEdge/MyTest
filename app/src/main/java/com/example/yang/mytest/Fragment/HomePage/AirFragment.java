@@ -12,7 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.yang.mytest.Bean.GetConfig;
+import com.example.yang.mytest.Bean.Config;
 import com.example.yang.mytest.Bean.ZhuYeReception;
 import com.example.yang.mytest.Http.HttpUtils;
 import com.example.yang.mytest.R;
@@ -92,12 +92,12 @@ public class AirFragment extends Fragment {
     }
 
     private void getConfig() {
-        Call<GetConfig> call = HttpUtils.request().getConfig();
-        call.enqueue(new Callback<GetConfig>() {
+        Call<Config> call = HttpUtils.request().getConfig();
+        call.enqueue(new Callback<Config>() {
 
             @Override
-            public void onResponse(Call<GetConfig> call, Response<GetConfig> response) {
-                GetConfig getConfig = response.body();
+            public void onResponse(Call<Config> call, Response<Config> response) {
+                Config getConfig = response.body();
                 airTemperature_minAirTemperature.setText(getConfig.getMinAirTemperature() + "");
                 airTemperature_maxAirTemperature.setText(getConfig.getMaxAirTemperature() + "");
                 airHumidity_minAirHumidity.setText(getConfig.getMinAirHumidity() + "");
@@ -105,7 +105,7 @@ public class AirFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<GetConfig> call, Throwable throwable) {
+            public void onFailure(Call<Config> call, Throwable throwable) {
                 Log.e(TAG, "请求失败");
                 Log.e(TAG, throwable.getMessage());
             }

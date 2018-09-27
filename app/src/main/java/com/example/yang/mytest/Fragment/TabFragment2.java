@@ -11,9 +11,14 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.yang.mytest.Dialog.IpDialog;
+import com.example.yang.mytest.Fragment.HomePage.Co2Fragment;
 import com.example.yang.mytest.Fragment.SetUp.ExitFragment;
 import com.example.yang.mytest.Fragment.SetUp.ShouDongKongZhi;
+import com.example.yang.mytest.Http.HttpUtils;
 import com.example.yang.mytest.R;
+
+import java.util.regex.Pattern;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -51,17 +56,51 @@ public class TabFragment2 extends Fragment {
         return view;
     }
 
-    @OnClick(value = {R.id.shoudongkongzhi, R.id.qinchuhuancun, R.id.banbengengx, R.id.guanyuwomen, R.id.my_exit})
+    private void ipSet(){
+        final IpDialog ipDialog = new IpDialog(getContext());
+        ipDialog.setTitle("ip地址设置");
+        ipDialog.setIp(HttpUtils.myUrl);
+
+        ipDialog.setYesOnclickListener("是", new IpDialog.onYesOnclickListener() {
+            @Override
+            public void onYesClick() {
+                String ip = ipDialog.getIp();
+                String pattern = "(?=(\\b|\\D))(((\\d{1,2})|(1\\d{1,2})|(2[0-4]\\d)|(25[0-5]))\\.){3}((\\d{1,2})|(1\\d{1,2})|(2[0-4]\\d)|(25[0-5]))(?=(\\b|\\D))";
+                if (Pattern.compile(pattern).matcher(ip).matches()){
+                    HttpUtils.myUrl = ip;
+                    Toast.makeText(getContext(), ip, Toast.LENGTH_SHORT).show();
+                    ipDialog.dismiss();
+                }else {
+                    Toast.makeText(getContext(), "格式错误，请重新输入", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
+        ipDialog.setNoOnclickListener("否", new IpDialog.onNoOnclickListener() {
+            @Override
+            public void onNoClick() {
+                ipDialog.dismiss();
+            }
+        });
+
+        ipDialog.show();
+    }
+
+    @OnClick(value = {R.id.shoudongkongzhi, R.id.qinchuhuancun, R.id.ipSet, R.id.banbengengx, R.id.guanyuwomen, R.id.my_exit})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.shoudongkongzhi:
-
+                Fragment shouDongKongZhi = new ShouDongKongZhi();
+                fm.beginTransaction().replace(R.id.tab, shouDongKongZhi).commit();
                 break;
             case R.id.qinchuhuancun:
 
                 break;
+            case R.id.ipSet:
+                ipSet();
+                break;
             case R.id.banbengengx:
-
+                Toast.makeText(getActivity(), "已是最新版本", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.guanyuwomen:
                 open(gone);

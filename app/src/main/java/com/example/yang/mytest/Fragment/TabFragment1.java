@@ -15,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.yang.mytest.Adapter.UltraPagerAdapter;
-import com.example.yang.mytest.Bean.GetConfig;
+import com.example.yang.mytest.Bean.Config;
 import com.example.yang.mytest.Fragment.HomePage.AirFragment;
 import com.example.yang.mytest.Fragment.HomePage.Co2Fragment;
 import com.example.yang.mytest.Fragment.HomePage.LightFragment;
@@ -169,13 +169,13 @@ public class TabFragment1 extends Fragment {
     }
 
     private void getRange() {
-        Call<GetConfig> getRange = HttpUtils.request().getConfig();
-        getRange.enqueue(new Callback<GetConfig>() {
+        Call<Config> getRange = HttpUtils.request().getConfig();
+        getRange.enqueue(new Callback<Config>() {
 
             @Override
-            public void onResponse(Call<GetConfig> call, Response<GetConfig> response) {
+            public void onResponse(Call<Config> call, Response<Config> response) {
                 Log.e(TAG, "getRange请求成功");
-                GetConfig getConfig = response.body();
+                Config getConfig = response.body();
                 f1_minCo2.setText(getConfig.getMinCo2() + "");
                 f1_maxCo2.setText(getConfig.getMaxCo2() + "");
                 f1_minLight.setText(getConfig.getMinLight() + "");
@@ -193,7 +193,7 @@ public class TabFragment1 extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<GetConfig> call, Throwable throwable) {
+            public void onFailure(Call<Config> call, Throwable throwable) {
                 Log.e(TAG, "getRange请求失败");
                 Log.e(TAG, throwable.getMessage());
             }
@@ -207,7 +207,6 @@ public class TabFragment1 extends Fragment {
             case R.id.f1_card1:
                 Fragment co2Fragment = new Co2Fragment();
                 fm.beginTransaction().replace(R.id.tab, co2Fragment).commit();
-
                 break;
             case R.id.f1_card2:
                 Fragment lightFragment = new LightFragment();
@@ -251,7 +250,7 @@ public class TabFragment1 extends Fragment {
         mUltraViewPager.setAutoScroll(2000);
     }
 
-    private void judgement(GetConfig getConfig) {
+    private void judgement(Config getConfig) {
         if (co2 > getConfig.getMinCo2() + 10 && co2 < getConfig.getMaxCo2() - 10)
             img_p_co2.setImageResource(R.mipmap.p1);
         else if (co2 > getConfig.getMinCo2() && co2 < getConfig.getMaxCo2())

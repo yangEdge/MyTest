@@ -23,7 +23,7 @@ public class HttpUtils {
     public static int flag_guangzhao = 0;
     public static int flag_shui = 0;
     public static int flag_baojing = 0;
-    
+
     public static ZhuYeReceptionInterface request() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://"+myUrl+":8890/type/jason/action/")

@@ -95,6 +95,34 @@
             android:layout_height="1dp" />
 
         <LinearLayout
+            android:id="@+id/ipSet"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="#ffffff"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="30dp"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:src="@mipmap/ip" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="5.6"
+                android:gravity="center_vertical"
+                android:text="ip设置"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1dp" />
+
+        <LinearLayout
             android:id="@+id/banbengengx"
             android:layout_width="match_parent"
             android:layout_height="50dp"
