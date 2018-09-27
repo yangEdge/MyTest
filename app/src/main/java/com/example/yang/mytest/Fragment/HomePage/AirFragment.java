@@ -27,6 +27,7 @@ import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
+ * 空气
  */
 public class AirFragment extends Fragment {
     private static String TAG = "AirFragment";
@@ -71,7 +72,9 @@ public class AirFragment extends Fragment {
         return view;
     }
 
-
+    /**
+     * 空气指数情况查询
+     */
     private void getSensor() {
         Call<ZhuYeReception> call = HttpUtils.request().getSensor();
         call.enqueue(new Callback<ZhuYeReception>() {
@@ -91,6 +94,9 @@ public class AirFragment extends Fragment {
         });
     }
 
+    /**
+     * 空气指数设定值查询
+     */
     private void getConfig() {
         Call<Config> call = HttpUtils.request().getConfig();
         call.enqueue(new Callback<Config>() {

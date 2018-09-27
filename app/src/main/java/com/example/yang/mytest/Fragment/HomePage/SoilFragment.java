@@ -27,6 +27,7 @@ import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
+ * 土壤
  */
 public class SoilFragment extends Fragment {
     private static String TAG = "SoilFragment";
@@ -69,6 +70,9 @@ public class SoilFragment extends Fragment {
         return view;
     }
 
+    /**
+     * 土壤指数情况查询
+     */
     private void getSensor() {
         Call<ZhuYeReception> call = HttpUtils.request().getSensor();
         call.enqueue(new Callback<ZhuYeReception>() {
@@ -88,6 +92,9 @@ public class SoilFragment extends Fragment {
         });
     }
 
+    /**
+     * 土壤指数设定值查询
+     */
     private void getConfig() {
         Call<Config> call = HttpUtils.request().getConfig();
         call.enqueue(new Callback<Config>() {

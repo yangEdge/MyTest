@@ -12,6 +12,9 @@ import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.POST;
 
+/**
+ * 网络请求接口
+ */
 public interface ZhuYeReceptionInterface {
     @POST("getSensor")
     Call<ZhuYeReception> getSensor();

@@ -27,6 +27,7 @@ import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
+ * CO2
  */
 public class Co2Fragment extends Fragment {
     private static String TAG = "Co2Fragment";
@@ -61,6 +62,9 @@ public class Co2Fragment extends Fragment {
         return view;
     }
 
+    /**
+     * CO2浓度查询
+     */
     private void getSensor() {
         Call<ZhuYeReception> call = HttpUtils.request().getSensor();
         call.enqueue(new Callback<ZhuYeReception>() {
@@ -79,6 +83,9 @@ public class Co2Fragment extends Fragment {
         });
     }
 
+    /**
+     * CO2指数设定值查询
+     */
     private void getConfig() {
         Call<Config> call = HttpUtils.request().getConfig();
         call.enqueue(new Callback<Config>() {

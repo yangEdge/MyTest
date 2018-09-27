@@ -26,6 +26,7 @@ import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
+ * 设置
  */
 public class TabFragment2 extends Fragment {
 
@@ -56,6 +57,9 @@ public class TabFragment2 extends Fragment {
         return view;
     }
 
+    /**
+     * ip地址设置
+     */
     private void ipSet(){
         final IpDialog ipDialog = new IpDialog(getContext());
         ipDialog.setTitle("ip地址设置");

@@ -18,6 +18,9 @@ import com.example.yang.mytest.Http.HttpUtils;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 欢迎页
+ */
 public class MainActivity extends Activity {
 
     @BindView(R.id.img)

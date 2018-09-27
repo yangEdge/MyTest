@@ -27,6 +27,7 @@ import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
+ * 光照
  */
 public class LightFragment extends Fragment {
     private static String TAG = "LightFragment";
@@ -62,6 +63,9 @@ public class LightFragment extends Fragment {
         return view;
     }
 
+    /**
+     * 光照指数情况查询
+     */
     private void getSensor() {
         Call<ZhuYeReception> call = HttpUtils.request().getSensor();
         call.enqueue(new Callback<ZhuYeReception>() {
@@ -80,6 +84,9 @@ public class LightFragment extends Fragment {
         });
     }
 
+    /**
+     * 光照指数设定值查询
+     */
     private void getConfig() {
         Call<Config> call = HttpUtils.request().getConfig();
         call.enqueue(new Callback<Config>() {

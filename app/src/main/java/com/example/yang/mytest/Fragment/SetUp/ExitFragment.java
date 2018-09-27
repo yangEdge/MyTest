@@ -12,6 +12,7 @@ import com.example.yang.mytest.R;
 
 /**
  * A simple {@link Fragment} subclass.
+ * 点击退出
  */
 public class ExitFragment extends Fragment {
 

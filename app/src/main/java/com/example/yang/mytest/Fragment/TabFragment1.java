@@ -32,6 +32,9 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+/**
+ * 首页
+ */
 public class TabFragment1 extends Fragment {
     private static String TAG = "TabFragment1";
 
@@ -144,6 +147,9 @@ public class TabFragment1 extends Fragment {
         return view;
     }
 
+    /**
+     * 各个指数情况
+     */
     private void request() {
         Call<ZhuYeReception> call = HttpUtils.request().getSensor();
         call.enqueue(new Callback<ZhuYeReception>() {
@@ -167,6 +173,9 @@ public class TabFragment1 extends Fragment {
         });
     }
 
+    /**
+     * 设定值情况
+     */
     private void getRange() {
         Call<Config> getRange = HttpUtils.request().getConfig();
         getRange.enqueue(new Callback<Config>() {
@@ -222,6 +231,10 @@ public class TabFragment1 extends Fragment {
         }
     }
 
+    /**
+     * viewPager
+     * @param view
+     */
     private void viewPager(View view) {
         mUltraViewPager.setScrollMode(UltraViewPager.ScrollMode.HORIZONTAL);
         mAdapter = new UltraPagerAdapter(view.getContext(), imageArr);
@@ -248,6 +261,10 @@ public class TabFragment1 extends Fragment {
         mUltraViewPager.setAutoScroll(2000);
     }
 
+    /**
+     * 指数比较，设定警告标志
+     * @param getConfig
+     */
     private void judgement(Config getConfig) {
         if (co2 > getConfig.getMinCo2() + 10 && co2 < getConfig.getMaxCo2() - 10)
             img_p_co2.setImageResource(R.mipmap.p1);

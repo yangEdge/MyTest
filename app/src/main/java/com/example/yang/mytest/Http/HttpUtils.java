@@ -16,6 +16,10 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
+/**
+ * 网络请求工具类
+ * 部分网络请求
+ */
 public class HttpUtils {
     private static String TAG = "HttpUtils";
     public static String myUrl = "192.168.1.106";
@@ -24,6 +28,10 @@ public class HttpUtils {
     public static int flag_shui = 0;
     public static int flag_baojing = 0;
 
+    /**
+     * 网络请求
+     * @return
+     */
     public static ZhuYeReceptionInterface request() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://" + myUrl + ":8890/type/jason/action/")
@@ -34,6 +42,13 @@ public class HttpUtils {
         return zhuYeReceptionInterface;
     }
 
+    /**
+     * 开关状态查询
+     * @param fengshan_img
+     * @param guangzhao_img
+     * @param shui_img
+     * @param baojing_img
+     */
     public static void getContorllerStatus(final ImageView fengshan_img, final ImageView guangzhao_img,
                                            final ImageView shui_img, final ImageView baojing_img) {
         Call<ContorllerStatus> call = HttpUtils.request().getContorllerStatus();
@@ -86,6 +101,10 @@ public class HttpUtils {
         });
     }
 
+    /**
+     * 风扇开关控制
+     * @param fengshan_img
+     */
     public static void controlBlower(final ImageView fengshan_img) {
         Call<ContorllerStatus> call;
         if (flag_fengshan == 0) {
@@ -110,6 +129,10 @@ public class HttpUtils {
 
     }
 
+    /**
+     * 光照开关控制
+     * @param guangzhao_img
+     */
     public static void controlRoadlamp(final ImageView guangzhao_img) {
         Call<ContorllerStatus> call;
         if (flag_guangzhao == 0) {
@@ -134,6 +157,10 @@ public class HttpUtils {
 
     }
 
+    /**
+     * 水泵开关控制
+     * @param shui_img
+     */
     public static void controlWaterPump(final ImageView shui_img) {
         Call<ContorllerStatus> call;
         if (flag_shui == 0) {
@@ -158,6 +185,10 @@ public class HttpUtils {
 
     }
 
+    /**
+     * 蜂鸣器开关控制
+     * @param baojing_img
+     */
     public static void controlBuzzer(final ImageView baojing_img) {
         Call<ContorllerStatus> call;
         if (flag_baojing == 0) {

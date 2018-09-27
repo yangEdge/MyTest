@@ -26,6 +26,7 @@ import retrofit2.Response;
 
 /**
  * A simple {@link Fragment} subclass.
+ * 设定各个参数的最大最小值
  */
 public class ShouDongKongZhi extends Fragment {
     private static String TAG = "ShouDongKongZhi";
@@ -72,6 +73,9 @@ public class ShouDongKongZhi extends Fragment {
         return view;
     }
 
+    /**
+     * 获取最小最大值
+     */
     private void getRange() {
         Call<Config> getRange = HttpUtils.request().getConfig();
         getRange.enqueue(new Callback<Config>() {
@@ -102,6 +106,9 @@ public class ShouDongKongZhi extends Fragment {
         });
     }
 
+    /**
+     * 设定最小最大值
+     */
     private void setRange() {
         int myMinCo2 = Integer.parseInt(minCo2.getText().toString());
         int myMaxCo2 = Integer.parseInt(maxCo2.getText().toString());

@@ -13,6 +13,9 @@ import com.example.yang.mytest.R;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
+/**
+ * 自定义dialog
+ */
 public class IpDialog extends Dialog {
     @BindView(R.id.yes) Button yes;
     @BindView(R.id.no) Button no;
