@@ -5,6 +5,14 @@ public class Config {
     private int maxCo2;
     private int minLight;
     private int maxLight;
+    private int minSoilTemperature;
+    private int maxSoilTemperature;
+    private int minSoilHumidity;
+    private int maxSoilHumidity;
+    private int minAirTemperature;
+    private int maxAirTemperature;
+    private int minAirHumidity;
+    private int maxAirHumidity;
 
     /**
      *
@@ -37,16 +45,6 @@ public class Config {
         this.minAirHumidity = minAirHumidity;
         this.maxAirHumidity = maxAirHumidity;
     }
-
-    private int minSoilTemperature;
-    private int maxSoilTemperature;
-    private int minSoilHumidity;
-    private int maxSoilHumidity;
-    private int minAirTemperature;
-    private int maxAirTemperature;
-    private int minAirHumidity;
-    private int maxAirHumidity;
-
 
     public int getMaxCo2() {
         return maxCo2;

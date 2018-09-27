@@ -265,8 +265,8 @@ public class TabFragment1 extends Fragment {
         else
             img_p_light.setImageResource(R.mipmap.p3);
 
-        if (soilTemperature > getConfig.getMinSoilTemperature() + 100 && soilTemperature < getConfig.getMaxSoilTemperature() - 100 ||
-                soilHumidity > getConfig.getMinSoilHumidity() + 100 && soilHumidity < getConfig.getMaxSoilHumidity() - 100)
+        if (soilTemperature > getConfig.getMinSoilTemperature() + 10 && soilTemperature < getConfig.getMaxSoilTemperature() - 10 ||
+                soilHumidity > getConfig.getMinSoilHumidity() + 20 && soilHumidity < getConfig.getMaxSoilHumidity() - 20)
             img_p_soil.setImageResource(R.mipmap.p1);
         else if (soilTemperature > getConfig.getMinSoilTemperature() && soilTemperature < getConfig.getMaxSoilTemperature() ||
                 soilHumidity > getConfig.getMinSoilHumidity() && soilHumidity < getConfig.getMaxSoilHumidity())
@@ -274,8 +274,8 @@ public class TabFragment1 extends Fragment {
         else
             img_p_soil.setImageResource(R.mipmap.p3);
 
-        if (airTemperature > getConfig.getMinAirTemperature() + 100 && airTemperature < getConfig.getMaxAirTemperature() - 100 ||
-                airHumidity > getConfig.getMinAirHumidity() + 100 && airHumidity < getConfig.getMaxAirHumidity() - 100)
+        if (airTemperature > getConfig.getMinAirTemperature() + 10 && airTemperature < getConfig.getMaxAirTemperature() - 10 ||
+                airHumidity > getConfig.getMinAirHumidity() + 20 && airHumidity < getConfig.getMaxAirHumidity() - 20)
             img_p_air.setImageResource(R.mipmap.p1);
         else if (airTemperature > getConfig.getMinAirTemperature() && airTemperature < getConfig.getMaxAirTemperature() ||
                 airHumidity > getConfig.getMinAirHumidity() && airHumidity < getConfig.getMaxAirHumidity())
