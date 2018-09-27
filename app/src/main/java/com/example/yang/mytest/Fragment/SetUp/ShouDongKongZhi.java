@@ -1,4 +1,4 @@
-package com.example.yang.mytest.Fragment;
+package com.example.yang.mytest.Fragment.SetUp;
 
 
 import android.os.Bundle;

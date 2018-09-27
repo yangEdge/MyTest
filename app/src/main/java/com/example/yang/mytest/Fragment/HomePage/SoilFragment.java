@@ -1,4 +1,4 @@
-package com.example.yang.mytest.Fragment;
+package com.example.yang.mytest.Fragment.HomePage;
 
 
 import android.content.Intent;
@@ -13,21 +13,19 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.yang.mytest.Bean.ControlBean.Blower;
-import com.example.yang.mytest.Bean.ControlBean.Buzzer;
-import com.example.yang.mytest.Bean.GetConfig;
 import com.example.yang.mytest.Bean.ContorllerStatus;
-import com.example.yang.mytest.Http.BaseHttp;
+import com.example.yang.mytest.Bean.ControlBean.Buzzer;
+import com.example.yang.mytest.Bean.ControlBean.Roadlamp;
+import com.example.yang.mytest.Bean.ControlBean.WaterPump;
+import com.example.yang.mytest.Bean.GetConfig;
 import com.example.yang.mytest.Bean.ZhuYeReception;
+import com.example.yang.mytest.Http.BaseHttp;
 import com.example.yang.mytest.R;
 import com.example.yang.mytest.TabLayout;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import okhttp3.MediaType;
-import okhttp3.Request;
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,22 +33,29 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Co2Fragment extends Fragment{
-    private static String TAG = "Co2Fragment";
+public class SoilFragment extends Fragment {
+    private static String TAG = "SoilFragment";
 
-    @BindView(R.id.co2_details)
-    TextView co2_details;
-    @BindView(R.id.co2_minCo2)
-    TextView co2_minCo2;
-    @BindView(R.id.co2_maxCo2)
-    TextView co2_maxCo2;
-    @BindView(R.id.co2_fengshan)
-    ImageView co2_fengshan;
-    @BindView(R.id.co2_baojing)
-    ImageView co2_baojing;
+    @BindView(R.id.soilTemperature_details)
+    TextView soilTemperature_details;
+    @BindView(R.id.soilTemperature_minSoilTemperature)
+    TextView soilTemperature_minSoilTemperature;
+    @BindView(R.id.soilTemperature_maxSoilTemperature)
+    TextView soilTemperature_maxSoilTemperature;
+    @BindView(R.id.soilHumidity_details)
+    TextView soilHumidity_details;
+    @BindView(R.id.soilHumidity_minSoilHumidity)
+    TextView soilHumidity_minSoilHumidity;
+    @BindView(R.id.soilHumidity_maxSoilHumidity)
+    TextView soilHumidity_maxSoilHumidity;
+    @BindView(R.id.soil_guangzhao)
+    ImageView soil_guangzhao;
+    @BindView(R.id.soil_shui)
+    ImageView soil_shui;
+    @BindView(R.id.soil_baojing)
+    ImageView soil_baojing;
 
-
-    public Co2Fragment() {
+    public SoilFragment() {
         // Required empty public constructor
     }
 
@@ -58,13 +63,14 @@ public class Co2Fragment extends Fragment{
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_co2, container, false);
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_soil, container, false);
         ButterKnife.bind(this, view);
 
         getFocus(view);
         getSensor();
         getConfig();
-        BaseHttp.getContorllerStatus(co2_fengshan,null,null,co2_baojing);
+        BaseHttp.getContorllerStatus(null,soil_guangzhao,soil_shui,soil_baojing);
         return view;
     }
 
@@ -75,7 +81,8 @@ public class Co2Fragment extends Fragment{
             @Override
             public void onResponse(Call<ZhuYeReception> call, Response<ZhuYeReception> response) {
                 ZhuYeReception zhuYeReception = response.body();
-                co2_details.setText(zhuYeReception.getCo2() + "");
+                soilTemperature_details.setText(zhuYeReception.getSoilTemperature() + "");
+                soilHumidity_details.setText(zhuYeReception.getSoilHumidity() + "");
             }
 
             @Override
@@ -93,8 +100,10 @@ public class Co2Fragment extends Fragment{
             @Override
             public void onResponse(Call<GetConfig> call, Response<GetConfig> response) {
                 GetConfig getConfig = response.body();
-                co2_minCo2.setText(getConfig.getMinCo2() + "");
-                co2_maxCo2.setText(getConfig.getMaxCo2() + "");
+                soilTemperature_minSoilTemperature.setText(getConfig.getMinSoilTemperature() + "");
+                soilTemperature_maxSoilTemperature.setText(getConfig.getMaxSoilTemperature() + "");
+                soilHumidity_minSoilHumidity.setText(getConfig.getMinSoilHumidity() + "");
+                soilHumidity_maxSoilHumidity.setText(getConfig.getMaxSoilHumidity() + "");
             }
 
             @Override
@@ -105,17 +114,20 @@ public class Co2Fragment extends Fragment{
         });
     }
 
-    @OnClick(value = {R.id.img_fanhui, R.id.co2_fengshan, R.id.co2_baojing})
+    @OnClick(value = {R.id.img_fanhui, R.id.soil_guangzhao, R.id.soil_shui, R.id.soil_baojing})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.img_fanhui:
                 back();
                 break;
-            case R.id.co2_fengshan:
-                BaseHttp.controlBlower(co2_fengshan);
+            case R.id.soil_guangzhao:
+                BaseHttp.controlRoadlamp(soil_guangzhao);
                 break;
-            case R.id.co2_baojing:
-                BaseHttp.controlBuzzer(co2_baojing);
+            case R.id.soil_shui:
+                BaseHttp.controlWaterPump(soil_shui);
+                break;
+            case R.id.soil_baojing:
+                BaseHttp.controlBuzzer(soil_baojing);
                 break;
             default:
         }

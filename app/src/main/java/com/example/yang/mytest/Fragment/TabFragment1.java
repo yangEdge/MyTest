@@ -5,9 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.transition.ChangeBounds;
-import android.transition.Slide;
-import android.transition.TransitionInflater;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -15,12 +12,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.yang.mytest.Adapter.UltraPagerAdapter;
+import com.example.yang.mytest.Fragment.HomePage.AirFragment;
+import com.example.yang.mytest.Fragment.HomePage.Co2Fragment;
+import com.example.yang.mytest.Fragment.HomePage.LightFragment;
+import com.example.yang.mytest.Fragment.HomePage.SoilFragment;
 import com.example.yang.mytest.Http.BaseHttp;
 import com.example.yang.mytest.Bean.ZhuYeReception;
-import com.example.yang.mytest.Http.ZhuYeReceptionInterface;
 import com.example.yang.mytest.R;
 import com.tmall.ultraviewpager.UltraViewPager;
 
@@ -30,8 +29,6 @@ import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import retrofit2.Retrofit;
-import retrofit2.converter.gson.GsonConverterFactory;
 
 public class TabFragment1 extends Fragment {
     private static String TAG = "TabFragment1";

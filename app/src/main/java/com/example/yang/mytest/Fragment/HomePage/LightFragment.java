@@ -1,4 +1,4 @@
-package com.example.yang.mytest.Fragment;
+package com.example.yang.mytest.Fragment.HomePage;
 
 
 import android.content.Intent;

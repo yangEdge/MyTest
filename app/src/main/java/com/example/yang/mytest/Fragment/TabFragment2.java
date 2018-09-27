@@ -1,7 +1,6 @@
 package com.example.yang.mytest.Fragment;
 
 
-import android.animation.LayoutTransition;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -9,10 +8,11 @@ import android.support.v4.app.FragmentTransaction;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.yang.mytest.Fragment.SetUp.ExitFragment;
+import com.example.yang.mytest.Fragment.SetUp.ShouDongKongZhi;
 import com.example.yang.mytest.R;
 
 import butterknife.BindView;
