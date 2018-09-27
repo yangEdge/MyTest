@@ -150,7 +150,6 @@ public class TabFragment1 extends Fragment {
 
             @Override
             public void onResponse(Call<ZhuYeReception> call, Response<ZhuYeReception> response) {
-                Log.e(TAG, "request请求成功");
                 ZhuYeReception zhuYeReception = response.body();
                 tv_co2.setText((co2 = zhuYeReception.getCo2()) + "");
                 tv_light.setText((light = zhuYeReception.getLight()) + "");
@@ -174,7 +173,6 @@ public class TabFragment1 extends Fragment {
 
             @Override
             public void onResponse(Call<Config> call, Response<Config> response) {
-                Log.e(TAG, "getRange请求成功");
                 Config getConfig = response.body();
                 f1_minCo2.setText(getConfig.getMinCo2() + "");
                 f1_maxCo2.setText(getConfig.getMaxCo2() + "");

@@ -62,7 +62,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
                         android:gravity="center_vertical"
-                        android:text="光照"
+                        android:text="CO2"
                         android:textSize="18sp" />
 
                     <LinearLayout
@@ -183,7 +183,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
-                android:layout_weight="1"
+                android:layout_weight="1.6"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:stateListAnimator="@drawable/lift_on_touch"
                 app:cardCornerRadius="10dp">
@@ -196,126 +196,114 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1">
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="土壤温度"
+                            android:textSize="18sp" />
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="80dp"
-                                android:layout_height="match_parent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:gravity="center_vertical"
-                                android:text="土壤温度"
+                                android:text="最小值："
                                 android:textSize="18sp" />
 
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
+                            <EditText
+                                android:id="@+id/minSoilTemperature"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn"
+                                android:gravity="center" />
+                        </LinearLayout>
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:text="最小值："
-                                    android:textSize="18sp" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
-                                <EditText
-                                    android:id="@+id/minSoilTemperature"
-                                    android:layout_width="50dp"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/btn"
-                                    android:gravity="center" />
-                            </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="最大值："
+                                android:textSize="18sp" />
 
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="最大值："
-                                    android:textSize="18sp" />
-
-                                <EditText
-                                    android:id="@+id/maxSoilTemperature"
-                                    android:layout_width="50dp"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/btn"
-                                    android:gravity="center" />
-                            </LinearLayout>
+                            <EditText
+                                android:id="@+id/maxSoilTemperature"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn"
+                                android:gravity="center" />
                         </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1">
+                        android:layout_marginTop="10dp"
+                        android:layout_weight="1"
+                        android:gravity="top"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="土壤湿度"
+                            android:textSize="18sp" />
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="80dp"
-                                android:layout_height="match_parent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:gravity="center_vertical"
-                                android:text="土壤湿度"
+                                android:text="最小值："
                                 android:textSize="18sp" />
 
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
+                            <EditText
+                                android:id="@+id/minSoilHumidity"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn"
+                                android:gravity="center" />
+                        </LinearLayout>
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:text="最小值："
-                                    android:textSize="18sp" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
-                                <EditText
-                                    android:id="@+id/minSoilHumidity"
-                                    android:layout_width="50dp"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/btn"
-                                    android:gravity="center" />
-                            </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="最大值："
+                                android:textSize="18sp" />
 
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="最大值："
-                                    android:textSize="18sp" />
-
-                                <EditText
-                                    android:id="@+id/maxSoilHumidity"
-                                    android:layout_width="50dp"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/btn"
-                                    android:gravity="center" />
-                            </LinearLayout>
+                            <EditText
+                                android:id="@+id/maxSoilHumidity"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn"
+                                android:gravity="center" />
                         </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -325,7 +313,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_margin="10dp"
-                android:layout_weight="1"
+                android:layout_weight="1.6"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:stateListAnimator="@drawable/lift_on_touch"
                 app:cardCornerRadius="10dp">
@@ -338,89 +326,79 @@
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
-                        android:layout_weight="1">
+                        android:layout_marginBottom="10dp"
+                        android:layout_weight="1"
+                        android:gravity="bottom"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="80dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="空气温度"
+                            android:textSize="18sp" />
 
                         <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
                             android:orientation="horizontal">
 
                             <TextView
-                                android:layout_width="80dp"
-                                android:layout_height="match_parent"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:gravity="center_vertical"
-                                android:text="空气温度"
+                                android:text="最小值："
                                 android:textSize="18sp" />
 
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
+                            <EditText
+                                android:id="@+id/minAirTemperature"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn"
+                                android:gravity="center" />
+                        </LinearLayout>
 
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:text="最小值："
-                                    android:textSize="18sp" />
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="horizontal">
 
-                                <EditText
-                                    android:id="@+id/minAirTemperature"
-                                    android:layout_width="50dp"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/btn"
-                                    android:gravity="center" />
-                            </LinearLayout>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="最大值："
+                                android:textSize="18sp" />
 
-                            <LinearLayout
-                                android:layout_width="0dp"
-                                android:layout_height="match_parent"
-                                android:layout_weight="1"
-                                android:gravity="center_vertical"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:text="最大值："
-                                    android:textSize="18sp" />
-
-                                <EditText
-                                    android:id="@+id/maxAirTemperature"
-                                    android:layout_width="50dp"
-                                    android:layout_height="wrap_content"
-                                    android:background="@drawable/btn"
-                                    android:gravity="center" />
-                            </LinearLayout>
+                            <EditText
+                                android:id="@+id/maxAirTemperature"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:background="@drawable/btn"
+                                android:gravity="center" />
                         </LinearLayout>
                     </LinearLayout>
 
                     <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_marginTop="10dp"
+                        android:gravity="top"
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="1">
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:orientation="horizontal">
-
                             <TextView
                                 android:layout_width="80dp"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_marginLeft="10dp"
-                                android:gravity="center_vertical"
                                 android:text="空气湿度"
                                 android:textSize="18sp" />
 
                             <LinearLayout
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:gravity="center_vertical"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -440,9 +418,8 @@
 
                             <LinearLayout
                                 android:layout_width="0dp"
-                                android:layout_height="match_parent"
+                                android:layout_height="wrap_content"
                                 android:layout_weight="1"
-                                android:gravity="center_vertical"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -458,7 +435,6 @@
                                     android:background="@drawable/btn"
                                     android:gravity="center" />
                             </LinearLayout>
-                        </LinearLayout>
                     </LinearLayout>
                 </LinearLayout>
             </android.support.v7.widget.CardView>

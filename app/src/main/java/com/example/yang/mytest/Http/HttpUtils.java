@@ -26,7 +26,7 @@ public class HttpUtils {
 
     public static ZhuYeReceptionInterface request() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl("http://"+myUrl+":8890/type/jason/action/")
+                .baseUrl("http://" + myUrl + ":8890/type/jason/action/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ZhuYeReceptionInterface zhuYeReceptionInterface = retrofit.create(ZhuYeReceptionInterface.class);
@@ -90,15 +90,14 @@ public class HttpUtils {
         Call<ContorllerStatus> call;
         if (flag_fengshan == 0) {
             call = HttpUtils.request().controlBlower(new Blower(1));
-            flag_fengshan = 1;
         } else {
             call = HttpUtils.request().controlBlower(new Blower(0));
-            flag_fengshan = 0;
         }
         call.enqueue(new Callback<ContorllerStatus>() {
             @Override
             public void onResponse(Call<ContorllerStatus> call, Response<ContorllerStatus> response) {
                 Log.e(TAG, "controlBlower请求成功");
+                stop();
                 getContorllerStatus(fengshan_img, null, null, null);
             }
 
@@ -115,12 +114,14 @@ public class HttpUtils {
         Call<ContorllerStatus> call;
         if (flag_guangzhao == 0) {
             call = HttpUtils.request().controlRoadlamp(new Roadlamp(1));
-        } else
+        } else {
             call = HttpUtils.request().controlRoadlamp(new Roadlamp(0));
+        }
         call.enqueue(new Callback<ContorllerStatus>() {
             @Override
             public void onResponse(Call<ContorllerStatus> call, Response<ContorllerStatus> response) {
                 Log.e(TAG, "controlRoadlamp请求成功");
+                stop();
                 getContorllerStatus(null, guangzhao_img, null, null);
             }
 
@@ -137,12 +138,14 @@ public class HttpUtils {
         Call<ContorllerStatus> call;
         if (flag_shui == 0) {
             call = HttpUtils.request().controlWaterPump(new WaterPump(1));
-        } else
+        } else {
             call = HttpUtils.request().controlWaterPump(new WaterPump(0));
+        }
         call.enqueue(new Callback<ContorllerStatus>() {
             @Override
             public void onResponse(Call<ContorllerStatus> call, Response<ContorllerStatus> response) {
                 Log.e(TAG, "controlWaterPump请求成功");
+                stop();
                 getContorllerStatus(null, null, shui_img, null);
             }
 
@@ -159,12 +162,14 @@ public class HttpUtils {
         Call<ContorllerStatus> call;
         if (flag_baojing == 0) {
             call = HttpUtils.request().controlBuzzer(new Buzzer(1));
-        } else
+        } else {
             call = HttpUtils.request().controlBuzzer(new Buzzer(0));
+        }
         call.enqueue(new Callback<ContorllerStatus>() {
             @Override
             public void onResponse(Call<ContorllerStatus> call, Response<ContorllerStatus> response) {
                 Log.e(TAG, "controlBuzzer请求成功");
+                stop();
                 getContorllerStatus(null, null, null, baojing_img);
             }
 
@@ -177,4 +182,11 @@ public class HttpUtils {
 
     }
 
+    private static void stop(){
+        try {
+            Thread.sleep(500);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
 }
