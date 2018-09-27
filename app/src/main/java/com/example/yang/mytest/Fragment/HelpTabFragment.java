@@ -17,7 +17,7 @@ import butterknife.OnClick;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class TabFragment3 extends Fragment {
+public class HelpTabFragment extends Fragment {
 
     @BindView(R.id.f3_l_gone1)
     LinearLayout gone1;
@@ -29,7 +29,7 @@ public class TabFragment3 extends Fragment {
     LinearLayout gone4;
 
 
-    public TabFragment3() {
+    public HelpTabFragment() {
         // Required empty public constructor
     }
 

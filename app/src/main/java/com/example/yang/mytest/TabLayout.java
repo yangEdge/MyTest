@@ -1,14 +1,12 @@
 package com.example.yang.mytest;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
-import android.support.v7.app.AppCompatActivity;
 
-import com.example.yang.mytest.Fragment.TabFragment1;
-import com.example.yang.mytest.Fragment.TabFragment2;
-import com.example.yang.mytest.Fragment.TabFragment3;
+import com.example.yang.mytest.Fragment.HelpTabFragment;
+import com.example.yang.mytest.Fragment.HomeTabFragment;
+import com.example.yang.mytest.Fragment.SettingTabFragment;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 
@@ -22,9 +20,9 @@ public class TabLayout extends FragmentActivity {
     private String[] mTitle = {"首页", "设置", "帮助"};
     private int[] mIcon = {R.mipmap.shouye_lu, R.mipmap.shezhi_lu, R.mipmap.bangzhu_lu};
     private int[] mIconUn = {R.mipmap.b1, R.mipmap.b2, R.mipmap.b3};
-    private TabFragment1 tabFragment1 = new TabFragment1();
-    private TabFragment2 tabFragment2 = new TabFragment2();
-    private TabFragment3 tabFragment3 = new TabFragment3();
+    private HomeTabFragment tabFragment1 = new HomeTabFragment();
+    private SettingTabFragment tabFragment2 = new SettingTabFragment();
+    private HelpTabFragment tabFragment3 = new HelpTabFragment();
 
 
     @Override

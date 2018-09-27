@@ -35,8 +35,8 @@ import retrofit2.Response;
 /**
  * 首页
  */
-public class TabFragment1 extends Fragment {
-    private static String TAG = "TabFragment1";
+public class HomeTabFragment extends Fragment {
+    private static String TAG = "HomeTabFragment";
 
     //指数数值
     @BindView(R.id.co2)
@@ -103,7 +103,7 @@ public class TabFragment1 extends Fragment {
     private static int airTemperature = 0;
     private static int airHumidity = 0;
 
-    public TabFragment1() {
+    public HomeTabFragment() {
         // Required empty public constructor
     }
 

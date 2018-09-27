@@ -28,7 +28,7 @@ import butterknife.OnClick;
  * A simple {@link Fragment} subclass.
  * 设置
  */
-public class TabFragment2 extends Fragment {
+public class SettingTabFragment extends Fragment {
 
     @BindView(R.id.f2_l_gone)
     LinearLayout gone;
@@ -39,7 +39,7 @@ public class TabFragment2 extends Fragment {
 
     private long exitTime;
 
-    public TabFragment2() {
+    public SettingTabFragment() {
         // Required empty public constructor
     }
 
