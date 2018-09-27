@@ -98,16 +98,16 @@
 
         <ImageView
             android:id="@+id/light_guangzhao"
-            android:src="@mipmap/dakaiguangzhao"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:src="@mipmap/dakaiguangzhao" />
 
         <ImageView
             android:id="@+id/light_baojing"
-            android:layout_marginTop="10dp"
-            android:src="@mipmap/dakaibaojing"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:src="@mipmap/dakaibaojing" />
     </LinearLayout>
 
 </FrameLayout>

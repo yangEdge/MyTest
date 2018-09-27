@@ -65,7 +65,7 @@
                             android:src="@mipmap/co2" />
 
                         <LinearLayout
-                            android:layout_width="120dp"
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
@@ -111,15 +111,25 @@
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="设定值:"
+                                    android:text="设定值："
                                     android:textColor="#3BD0E2" />
 
                                 <TextView
-                                    android:id="@+id/sheding_co2"
+                                    android:id="@+id/f1_minCo2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20dp"
-                                    android:text="" />
+                                    android:text="null" />
+
+                                <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="~~" />
+
+                                <TextView
+                                    android:id="@+id/f1_maxCo2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="null" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -166,7 +176,7 @@
                             android:src="@mipmap/guangzhao" />
 
                         <LinearLayout
-                            android:layout_width="120dp"
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
@@ -210,17 +220,27 @@
                                 android:orientation="horizontal">
 
                                 <TextView
-                                    android:id="@+id/sheding_light"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:text="设定值:"
+                                    android:text="设定值："
                                     android:textColor="#3BD0E2" />
+
+                                <TextView
+                                    android:id="@+id/f1_minLight"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="null" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
-                                    android:layout_marginLeft="20dp"
-                                    android:text="" />
+                                    android:text="~~" />
+
+                                <TextView
+                                    android:id="@+id/f1_maxLight"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="null" />
                             </LinearLayout>
                         </LinearLayout>
 
@@ -267,7 +287,7 @@
                             android:src="@mipmap/turang" />
 
                         <LinearLayout
-                            android:layout_width="130dp"
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
@@ -331,15 +351,25 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="温度设定值"
+                                        android:text="温度设定值："
                                         android:textColor="#3BD0E2" />
 
                                     <TextView
-                                        android:id="@+id/sheding_soilTemperature"
+                                        android:id="@+id/f1_minSoilTemperature"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="20dp"
-                                        android:text="" />
+                                        android:text="null" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="~~" />
+
+                                    <TextView
+                                        android:id="@+id/f1_maxSoilTemperature"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="null" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -355,11 +385,21 @@
                                         android:textColor="#3BD0E2" />
 
                                     <TextView
-                                        android:id="@+id/sheding_soilHumidity"
+                                        android:id="@+id/f1_minSoilHumidity"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="20dp"
-                                        android:text="" />
+                                        android:text="null" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="~~" />
+
+                                    <TextView
+                                        android:id="@+id/f1_maxSoilHumidity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="null" />
                                 </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>
@@ -407,7 +447,7 @@
                             android:src="@mipmap/kongqi" />
 
                         <LinearLayout
-                            android:layout_width="130dp"
+                            android:layout_width="150dp"
                             android:layout_height="match_parent"
                             android:orientation="vertical">
 
@@ -478,15 +518,25 @@
                                     <TextView
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:text="温度设定值"
+                                        android:text="温度设定值："
                                         android:textColor="#3BD0E2" />
 
                                     <TextView
-                                        android:id="@+id/sheding_airTemperature"
+                                        android:id="@+id/f1_minAirTemperature"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="20dp"
-                                        android:text="" />
+                                        android:text="null" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="~~" />
+
+                                    <TextView
+                                        android:id="@+id/f1_maxAirTemperature"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="null" />
                                 </LinearLayout>
 
                                 <LinearLayout
@@ -502,11 +552,21 @@
                                         android:textColor="#3BD0E2" />
 
                                     <TextView
-                                        android:id="@+id/sheding_airHumidity"
+                                        android:id="@+id/f1_minAirHumidity"
                                         android:layout_width="wrap_content"
                                         android:layout_height="wrap_content"
-                                        android:layout_marginLeft="20dp"
-                                        android:text="" />
+                                        android:text="null" />
+
+                                    <TextView
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="~~" />
+
+                                    <TextView
+                                        android:id="@+id/f1_maxAirHumidity"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:text="null" />
                                 </LinearLayout>
                             </LinearLayout>
                         </LinearLayout>

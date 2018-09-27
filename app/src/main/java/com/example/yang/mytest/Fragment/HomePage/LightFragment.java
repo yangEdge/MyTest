@@ -11,14 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.yang.mytest.Bean.ContorllerStatus;
-import com.example.yang.mytest.Bean.ControlBean.Buzzer;
-import com.example.yang.mytest.Bean.ControlBean.Roadlamp;
 import com.example.yang.mytest.Bean.GetConfig;
 import com.example.yang.mytest.Bean.ZhuYeReception;
-import com.example.yang.mytest.Http.BaseHttp;
+import com.example.yang.mytest.Http.HttpUtils;
 import com.example.yang.mytest.R;
 import com.example.yang.mytest.TabLayout;
 
@@ -32,7 +28,7 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class LightFragment extends Fragment{
+public class LightFragment extends Fragment {
     private static String TAG = "LightFragment";
 
     @BindView(R.id.light_details)
@@ -62,12 +58,12 @@ public class LightFragment extends Fragment{
         getFocus(view);
         getSensor();
         getConfig();
-        BaseHttp.getContorllerStatus(null,light_guangzhao,null,light_baojing);
+        HttpUtils.getContorllerStatus(null, light_guangzhao, null, light_baojing);
         return view;
     }
 
     private void getSensor() {
-        Call<ZhuYeReception> call = BaseHttp.request().getSensor();
+        Call<ZhuYeReception> call = HttpUtils.request().getSensor();
         call.enqueue(new Callback<ZhuYeReception>() {
 
             @Override
@@ -85,7 +81,7 @@ public class LightFragment extends Fragment{
     }
 
     private void getConfig() {
-        Call<GetConfig> call = BaseHttp.request().getConfig();
+        Call<GetConfig> call = HttpUtils.request().getConfig();
         call.enqueue(new Callback<GetConfig>() {
 
             @Override
@@ -110,10 +106,10 @@ public class LightFragment extends Fragment{
                 back();
                 break;
             case R.id.light_guangzhao:
-                BaseHttp.controlRoadlamp(light_guangzhao);
+                HttpUtils.controlRoadlamp(light_guangzhao);
                 break;
             case R.id.light_baojing:
-                BaseHttp.controlBuzzer(light_baojing);
+                HttpUtils.controlBuzzer(light_baojing);
                 break;
             default:
         }

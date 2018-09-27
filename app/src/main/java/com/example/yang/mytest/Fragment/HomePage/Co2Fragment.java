@@ -11,13 +11,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.yang.mytest.Bean.ControlBean.Blower;
-import com.example.yang.mytest.Bean.ControlBean.Buzzer;
 import com.example.yang.mytest.Bean.GetConfig;
-import com.example.yang.mytest.Bean.ContorllerStatus;
-import com.example.yang.mytest.Http.BaseHttp;
+import com.example.yang.mytest.Http.HttpUtils;
 import com.example.yang.mytest.Bean.ZhuYeReception;
 import com.example.yang.mytest.R;
 import com.example.yang.mytest.TabLayout;
@@ -25,9 +21,6 @@ import com.example.yang.mytest.TabLayout;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import okhttp3.MediaType;
-import okhttp3.Request;
-import okhttp3.RequestBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -35,7 +28,7 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class Co2Fragment extends Fragment{
+public class Co2Fragment extends Fragment {
     private static String TAG = "Co2Fragment";
 
     @BindView(R.id.co2_details)
@@ -64,12 +57,12 @@ public class Co2Fragment extends Fragment{
         getFocus(view);
         getSensor();
         getConfig();
-        BaseHttp.getContorllerStatus(co2_fengshan,null,null,co2_baojing);
+        HttpUtils.getContorllerStatus(co2_fengshan, null, null, co2_baojing);
         return view;
     }
 
     private void getSensor() {
-        Call<ZhuYeReception> call = BaseHttp.request().getSensor();
+        Call<ZhuYeReception> call = HttpUtils.request().getSensor();
         call.enqueue(new Callback<ZhuYeReception>() {
 
             @Override
@@ -87,7 +80,7 @@ public class Co2Fragment extends Fragment{
     }
 
     private void getConfig() {
-        Call<GetConfig> call = BaseHttp.request().getConfig();
+        Call<GetConfig> call = HttpUtils.request().getConfig();
         call.enqueue(new Callback<GetConfig>() {
 
             @Override
@@ -112,10 +105,10 @@ public class Co2Fragment extends Fragment{
                 back();
                 break;
             case R.id.co2_fengshan:
-                BaseHttp.controlBlower(co2_fengshan);
+                HttpUtils.controlBlower(co2_fengshan);
                 break;
             case R.id.co2_baojing:
-                BaseHttp.controlBuzzer(co2_baojing);
+                HttpUtils.controlBuzzer(co2_baojing);
                 break;
             default:
         }

@@ -8,8 +8,6 @@ import com.example.yang.mytest.Bean.ControlBean.Blower;
 import com.example.yang.mytest.Bean.ControlBean.Buzzer;
 import com.example.yang.mytest.Bean.ControlBean.Roadlamp;
 import com.example.yang.mytest.Bean.ControlBean.WaterPump;
-import com.example.yang.mytest.Bean.GetConfig;
-import com.example.yang.mytest.Bean.ZhuYeReception;
 import com.example.yang.mytest.R;
 
 import retrofit2.Call;
@@ -18,8 +16,8 @@ import retrofit2.Response;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class BaseHttp {
-    private static String TAG = "BaseHttp";
+public class HttpUtils {
+    private static String TAG = "HttpUtils";
     public static String url = "http://192.168.1.106:8890/type/jason/action/";
     public static int flag_fengshan = 0;
     public static int flag_guangzhao = 0;
@@ -38,7 +36,7 @@ public class BaseHttp {
 
     public static void getContorllerStatus(final ImageView fengshan_img, final ImageView guangzhao_img,
                                            final ImageView shui_img, final ImageView baojing_img) {
-        Call<ContorllerStatus> call = BaseHttp.request().getContorllerStatus();
+        Call<ContorllerStatus> call = HttpUtils.request().getContorllerStatus();
         call.enqueue(new Callback<ContorllerStatus>() {
 
             @Override
@@ -91,10 +89,10 @@ public class BaseHttp {
     public static void controlBlower(final ImageView fengshan_img) {
         Call<ContorllerStatus> call;
         if (flag_fengshan == 0) {
-            call = BaseHttp.request().controlBlower(new Blower(1));
+            call = HttpUtils.request().controlBlower(new Blower(1));
             flag_fengshan = 1;
         } else {
-            call = BaseHttp.request().controlBlower(new Blower(0));
+            call = HttpUtils.request().controlBlower(new Blower(0));
             flag_fengshan = 0;
         }
         call.enqueue(new Callback<ContorllerStatus>() {
@@ -116,9 +114,9 @@ public class BaseHttp {
     public static void controlRoadlamp(final ImageView guangzhao_img) {
         Call<ContorllerStatus> call;
         if (flag_guangzhao == 0) {
-            call = BaseHttp.request().controlRoadlamp(new Roadlamp(1));
+            call = HttpUtils.request().controlRoadlamp(new Roadlamp(1));
         } else
-            call = BaseHttp.request().controlRoadlamp(new Roadlamp(0));
+            call = HttpUtils.request().controlRoadlamp(new Roadlamp(0));
         call.enqueue(new Callback<ContorllerStatus>() {
             @Override
             public void onResponse(Call<ContorllerStatus> call, Response<ContorllerStatus> response) {
@@ -138,9 +136,9 @@ public class BaseHttp {
     public static void controlWaterPump(final ImageView shui_img) {
         Call<ContorllerStatus> call;
         if (flag_shui == 0) {
-            call = BaseHttp.request().controlWaterPump(new WaterPump(1));
+            call = HttpUtils.request().controlWaterPump(new WaterPump(1));
         } else
-            call = BaseHttp.request().controlWaterPump(new WaterPump(0));
+            call = HttpUtils.request().controlWaterPump(new WaterPump(0));
         call.enqueue(new Callback<ContorllerStatus>() {
             @Override
             public void onResponse(Call<ContorllerStatus> call, Response<ContorllerStatus> response) {
@@ -160,9 +158,9 @@ public class BaseHttp {
     public static void controlBuzzer(final ImageView baojing_img) {
         Call<ContorllerStatus> call;
         if (flag_baojing == 0) {
-            call = BaseHttp.request().controlBuzzer(new Buzzer(1));
+            call = HttpUtils.request().controlBuzzer(new Buzzer(1));
         } else
-            call = BaseHttp.request().controlBuzzer(new Buzzer(0));
+            call = HttpUtils.request().controlBuzzer(new Buzzer(0));
         call.enqueue(new Callback<ContorllerStatus>() {
             @Override
             public void onResponse(Call<ContorllerStatus> call, Response<ContorllerStatus> response) {

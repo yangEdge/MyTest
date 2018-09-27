@@ -11,12 +11,14 @@ import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 public class MainActivity extends Activity {
 
-    @BindView(R.id.img) ImageView img;
+    @BindView(R.id.img)
+    ImageView img;
 
     private static String TAG = "MainActivity";
 
@@ -30,7 +32,7 @@ public class MainActivity extends Activity {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(MainActivity.this,TabLayout.class);
+                Intent intent = new Intent(MainActivity.this, TabLayout.class);
                 startActivity(intent);
                 finish();
             }

@@ -20,8 +20,8 @@ public class TabLayout extends FragmentActivity {
     private ArrayList<Fragment> fragments = new ArrayList<>();
     private ArrayList<CustomTabEntity> tabEntities = new ArrayList<>();
     private String[] mTitle = {"首页", "设置", "帮助"};
-    private int[] mIcon = {R.mipmap.shouye_lu,R.mipmap.shezhi_lu,R.mipmap.bangzhu_lu};
-    private int[] mIconUn = {R.mipmap.b1,R.mipmap.b2,R.mipmap.b3};
+    private int[] mIcon = {R.mipmap.shouye_lu, R.mipmap.shezhi_lu, R.mipmap.bangzhu_lu};
+    private int[] mIconUn = {R.mipmap.b1, R.mipmap.b2, R.mipmap.b3};
     private TabFragment1 tabFragment1 = new TabFragment1();
     private TabFragment2 tabFragment2 = new TabFragment2();
     private TabFragment3 tabFragment3 = new TabFragment3();
@@ -33,7 +33,7 @@ public class TabLayout extends FragmentActivity {
         setContentView(R.layout.activity_tab_layout);
 
         init();
-        tl.setTabData(tabEntities,this,R.id.myFL,fragments);
+        tl.setTabData(tabEntities, this, R.id.myFL, fragments);
         tl.setCurrentTab(0);
     }
 
@@ -44,7 +44,7 @@ public class TabLayout extends FragmentActivity {
         fragments.add(tabFragment3);
 
         for (int i = 0; i < mTitle.length; i++) {
-            tabEntities.add(new TabEntity(mTitle[i],mIcon[i],mIconUn[i]));
+            tabEntities.add(new TabEntity(mTitle[i], mIcon[i], mIconUn[i]));
         }
     }
 }

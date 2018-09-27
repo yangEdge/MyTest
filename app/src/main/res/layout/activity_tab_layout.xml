@@ -2,10 +2,10 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tab"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:id="@+id/tab"
     tools:context=".TabLayout">
 
     <FrameLayout
@@ -24,11 +24,11 @@
         app:tl_iconHeight="30dp"
         app:tl_iconMargin="5dp"
         app:tl_iconWidth="30dp"
-        app:tl_tab_space_equal="true"
         app:tl_indicator_bounce_enable="true"
         app:tl_indicator_color="#63C999"
         app:tl_indicator_gravity="BOTTOM"
         app:tl_indicator_height="0dp"
+        app:tl_tab_space_equal="true"
         app:tl_textSelectColor="#63C999"
         app:tl_textUnselectColor="#66000000"
         app:tl_textsize="15sp"

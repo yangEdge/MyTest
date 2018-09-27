@@ -11,16 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.yang.mytest.Bean.ContorllerStatus;
-import com.example.yang.mytest.Bean.ControlBean.Blower;
-import com.example.yang.mytest.Bean.ControlBean.Buzzer;
-import com.example.yang.mytest.Bean.ControlBean.Roadlamp;
-import com.example.yang.mytest.Bean.ControlBean.WaterPump;
 import com.example.yang.mytest.Bean.GetConfig;
 import com.example.yang.mytest.Bean.ZhuYeReception;
-import com.example.yang.mytest.Http.BaseHttp;
+import com.example.yang.mytest.Http.HttpUtils;
 import com.example.yang.mytest.R;
 import com.example.yang.mytest.TabLayout;
 
@@ -34,7 +28,7 @@ import retrofit2.Response;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class AirFragment extends Fragment{
+public class AirFragment extends Fragment {
     private static String TAG = "AirFragment";
 
     @BindView(R.id.airTemperature_details)
@@ -73,13 +67,13 @@ public class AirFragment extends Fragment{
         getFocus(view);
         getSensor();
         getConfig();
-        BaseHttp.getContorllerStatus(air_fengshan,air_guangzhao,air_shui,air_baojing);
+        HttpUtils.getContorllerStatus(air_fengshan, air_guangzhao, air_shui, air_baojing);
         return view;
     }
 
 
     private void getSensor() {
-        Call<ZhuYeReception> call = BaseHttp.request().getSensor();
+        Call<ZhuYeReception> call = HttpUtils.request().getSensor();
         call.enqueue(new Callback<ZhuYeReception>() {
 
             @Override
@@ -98,7 +92,7 @@ public class AirFragment extends Fragment{
     }
 
     private void getConfig() {
-        Call<GetConfig> call = BaseHttp.request().getConfig();
+        Call<GetConfig> call = HttpUtils.request().getConfig();
         call.enqueue(new Callback<GetConfig>() {
 
             @Override
@@ -118,23 +112,23 @@ public class AirFragment extends Fragment{
         });
     }
 
-    @OnClick(value = {R.id.img_fanhui, R.id.air_fengshan,R.id.air_guangzhao, R.id.air_shui, R.id.air_baojing})
+    @OnClick(value = {R.id.img_fanhui, R.id.air_fengshan, R.id.air_guangzhao, R.id.air_shui, R.id.air_baojing})
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.img_fanhui:
                 back();
                 break;
             case R.id.air_fengshan:
-                BaseHttp.controlBlower(air_fengshan);
+                HttpUtils.controlBlower(air_fengshan);
                 break;
             case R.id.air_guangzhao:
-                BaseHttp.controlRoadlamp(air_guangzhao);
+                HttpUtils.controlRoadlamp(air_guangzhao);
                 break;
             case R.id.air_shui:
-                BaseHttp.controlWaterPump(air_shui);
+                HttpUtils.controlWaterPump(air_shui);
                 break;
             case R.id.air_baojing:
-                BaseHttp.controlBuzzer(air_baojing);
+                HttpUtils.controlBuzzer(air_baojing);
                 break;
             default:
         }

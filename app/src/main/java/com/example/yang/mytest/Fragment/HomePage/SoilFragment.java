@@ -11,15 +11,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.yang.mytest.Bean.ContorllerStatus;
-import com.example.yang.mytest.Bean.ControlBean.Buzzer;
-import com.example.yang.mytest.Bean.ControlBean.Roadlamp;
-import com.example.yang.mytest.Bean.ControlBean.WaterPump;
 import com.example.yang.mytest.Bean.GetConfig;
 import com.example.yang.mytest.Bean.ZhuYeReception;
-import com.example.yang.mytest.Http.BaseHttp;
+import com.example.yang.mytest.Http.HttpUtils;
 import com.example.yang.mytest.R;
 import com.example.yang.mytest.TabLayout;
 
@@ -70,12 +65,12 @@ public class SoilFragment extends Fragment {
         getFocus(view);
         getSensor();
         getConfig();
-        BaseHttp.getContorllerStatus(null,soil_guangzhao,soil_shui,soil_baojing);
+        HttpUtils.getContorllerStatus(null, soil_guangzhao, soil_shui, soil_baojing);
         return view;
     }
 
     private void getSensor() {
-        Call<ZhuYeReception> call = BaseHttp.request().getSensor();
+        Call<ZhuYeReception> call = HttpUtils.request().getSensor();
         call.enqueue(new Callback<ZhuYeReception>() {
 
             @Override
@@ -94,7 +89,7 @@ public class SoilFragment extends Fragment {
     }
 
     private void getConfig() {
-        Call<GetConfig> call = BaseHttp.request().getConfig();
+        Call<GetConfig> call = HttpUtils.request().getConfig();
         call.enqueue(new Callback<GetConfig>() {
 
             @Override
@@ -121,13 +116,13 @@ public class SoilFragment extends Fragment {
                 back();
                 break;
             case R.id.soil_guangzhao:
-                BaseHttp.controlRoadlamp(soil_guangzhao);
+                HttpUtils.controlRoadlamp(soil_guangzhao);
                 break;
             case R.id.soil_shui:
-                BaseHttp.controlWaterPump(soil_shui);
+                HttpUtils.controlWaterPump(soil_shui);
                 break;
             case R.id.soil_baojing:
-                BaseHttp.controlBuzzer(soil_baojing);
+                HttpUtils.controlBuzzer(soil_baojing);
                 break;
             default:
         }

@@ -6,9 +6,9 @@
     tools:context=".Fragment.SetUp.ExitFragment">
 
     <ImageView
-        android:src="@mipmap/logding"
         android:id="@+id/img"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"
+        android:src="@mipmap/logding" />
 
 </FrameLayout>
