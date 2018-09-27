@@ -18,15 +18,15 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class HttpUtils {
     private static String TAG = "HttpUtils";
-    public static String url = "http://192.168.1.106:8890/type/jason/action/";
+    public static String myUrl = "192.168.1.106";
     public static int flag_fengshan = 0;
     public static int flag_guangzhao = 0;
     public static int flag_shui = 0;
     public static int flag_baojing = 0;
-
+    
     public static ZhuYeReceptionInterface request() {
         Retrofit retrofit = new Retrofit.Builder()
-                .baseUrl(url)
+                .baseUrl("http://"+myUrl+":8890/type/jason/action/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
         ZhuYeReceptionInterface zhuYeReceptionInterface = retrofit.create(ZhuYeReceptionInterface.class);
