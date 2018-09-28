@@ -1,15 +1,23 @@
 package com.example.yang.mytest;
 
+import android.app.Activity;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 
+import com.example.yang.mytest.Bean.Utils;
 import com.example.yang.mytest.Fragment.HelpTabFragment;
 import com.example.yang.mytest.Fragment.HomeTabFragment;
 import com.example.yang.mytest.Fragment.SettingTabFragment;
 import com.flyco.tablayout.CommonTabLayout;
 import com.flyco.tablayout.listener.CustomTabEntity;
 
+import java.lang.reflect.Field;
 import java.util.ArrayList;
 
 public class TabLayout extends FragmentActivity {
@@ -30,6 +38,7 @@ public class TabLayout extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tab_layout);
 
+        Utils.fullScreen(this);
         init();
         tl.setTabData(tabEntities, this, R.id.myFL, fragments);
         tl.setCurrentTab(0);
@@ -45,4 +54,5 @@ public class TabLayout extends FragmentActivity {
             tabEntities.add(new TabEntity(mTitle[i], mIcon[i], mIconUn[i]));
         }
     }
+
 }

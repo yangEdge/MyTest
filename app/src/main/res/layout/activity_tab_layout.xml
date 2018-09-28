@@ -8,6 +8,11 @@
     android:orientation="vertical"
     tools:context=".TabLayout">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="15dp"
+        android:background="#44BCFF" />
+
     <FrameLayout
         android:id="@+id/myFL"
         android:layout_width="match_parent"
@@ -19,7 +24,6 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="0.6"
-        android:background="#ffffff"
         app:tl_iconGravity="TOP"
         app:tl_iconHeight="30dp"
         app:tl_iconMargin="5dp"

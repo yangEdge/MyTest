@@ -12,8 +12,6 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.example.yang.mytest.Dialog.IpDialog;
-import com.example.yang.mytest.Fragment.HomePage.Co2Fragment;
-import com.example.yang.mytest.Fragment.SetUp.ExitFragment;
 import com.example.yang.mytest.Fragment.SetUp.ShouDongKongZhi;
 import com.example.yang.mytest.Http.HttpUtils;
 import com.example.yang.mytest.R;
@@ -115,8 +113,19 @@ public class SettingTabFragment extends Fragment {
                             Toast.LENGTH_SHORT).show();
                     exitTime = System.currentTimeMillis();
                 } else {
-                    Fragment exitFragment = new ExitFragment();
-                    fm.beginTransaction().replace(R.id.tab, exitFragment).commit();
+                    Toast.makeText(getContext(), "谢谢您的使用，下次再见", Toast.LENGTH_SHORT).show();
+                    new Thread(new Runnable() {
+                        @Override
+                        public void run() {
+                            try {
+                                Thread.sleep(3000);
+                                getActivity().finish();
+                                System.exit(0);
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    }).start();
                 }
                 break;
             default:

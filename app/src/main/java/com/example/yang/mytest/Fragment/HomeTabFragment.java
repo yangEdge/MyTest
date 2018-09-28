@@ -16,6 +16,7 @@ import android.widget.TextView;
 
 import com.example.yang.mytest.Adapter.UltraPagerAdapter;
 import com.example.yang.mytest.Bean.Config;
+import com.example.yang.mytest.Bean.Utils;
 import com.example.yang.mytest.Fragment.HomePage.AirFragment;
 import com.example.yang.mytest.Fragment.HomePage.Co2Fragment;
 import com.example.yang.mytest.Fragment.HomePage.LightFragment;
@@ -143,7 +144,6 @@ public class HomeTabFragment extends Fragment {
             }
         });
         thread.start();
-
         return view;
     }
 

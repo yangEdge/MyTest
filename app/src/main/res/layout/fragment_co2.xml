@@ -12,12 +12,13 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="60dp">
+            android:layout_height="60dp"
+            android:background="#44BCFF">
 
             <ImageView
                 android:id="@+id/img_fanhui"
-                android:layout_width="15dp"
-                android:layout_height="25dp"
+                android:layout_width="25dp"
+                android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_margin="10dp"
                 android:src="@mipmap/fanhuianniu" />
@@ -28,7 +29,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:text="CO2详情"
-                android:textColor="#63C999"
+                android:textColor="#ffffff"
                 android:textSize="25sp" />
         </RelativeLayout>
 
