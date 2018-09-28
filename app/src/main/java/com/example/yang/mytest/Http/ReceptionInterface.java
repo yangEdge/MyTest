@@ -15,7 +15,7 @@ import retrofit2.http.POST;
 /**
  * 网络请求接口
  */
-public interface ZhuYeReceptionInterface {
+public interface ReceptionInterface {
     @POST("getSensor")
     Call<ZhuYeReception> getSensor();
 

@@ -32,12 +32,12 @@ public class HttpUtils {
      * 网络请求
      * @return
      */
-    public static ZhuYeReceptionInterface request() {
+    public static ReceptionInterface request() {
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://" + myUrl + ":8890/type/jason/action/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        ZhuYeReceptionInterface zhuYeReceptionInterface = retrofit.create(ZhuYeReceptionInterface.class);
+        ReceptionInterface zhuYeReceptionInterface = retrofit.create(ReceptionInterface.class);
 
         return zhuYeReceptionInterface;
     }

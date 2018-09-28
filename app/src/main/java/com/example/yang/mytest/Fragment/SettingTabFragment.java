@@ -50,6 +50,7 @@ public class SettingTabFragment extends Fragment {
         ButterKnife.bind(this, view);
         fm = getFragmentManager();
         ft = fm.beginTransaction();
+        ft.setCustomAnimations(R.anim.fragment_right,0);
         shouDongKongZhi = new ShouDongKongZhi();
 
         return view;
@@ -93,7 +94,8 @@ public class SettingTabFragment extends Fragment {
         switch (v.getId()) {
             case R.id.shoudongkongzhi:
                 Fragment shouDongKongZhi = new ShouDongKongZhi();
-                fm.beginTransaction().replace(R.id.tab, shouDongKongZhi).commit();
+                ft.add(R.id.tab, shouDongKongZhi);
+                ft.commitAllowingStateLoss();
                 break;
             case R.id.qinchuhuancun:
 

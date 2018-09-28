@@ -5,6 +5,7 @@ import android.support.v4.app.FragmentManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.util.Log;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -210,25 +211,28 @@ public class HomeTabFragment extends Fragment {
     @OnClick(value = {R.id.f1_card1, R.id.f1_card2, R.id.f1_card3, R.id.f1_card4})
     public void onClick(View v) {
         FragmentManager fm = getActivity().getSupportFragmentManager();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.setCustomAnimations(R.anim.fragment_right,0);
         switch (v.getId()) {
             case R.id.f1_card1:
                 Fragment co2Fragment = new Co2Fragment();
-                fm.beginTransaction().replace(R.id.tab, co2Fragment).commit();
+                ft.add(R.id.tab, co2Fragment);
                 break;
             case R.id.f1_card2:
                 Fragment lightFragment = new LightFragment();
-                fm.beginTransaction().replace(R.id.tab, lightFragment).commit();
+                ft.add(R.id.tab, lightFragment);
                 break;
             case R.id.f1_card3:
                 Fragment soilFragment = new SoilFragment();
-                fm.beginTransaction().replace(R.id.tab, soilFragment).commit();
+                ft.add(R.id.tab, soilFragment);
                 break;
             case R.id.f1_card4:
                 Fragment airFragment = new AirFragment();
-                fm.beginTransaction().replace(R.id.tab, airFragment).commit();
+                ft.add(R.id.tab, airFragment);
                 break;
             default:
         }
+        ft.commitAllowingStateLoss();
     }
 
     /**
