@@ -11,6 +11,9 @@ import android.widget.LinearLayout;
 
 import com.example.yang.mytest.R;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class UltraPagerAdapter extends PagerAdapter {
     private Context context;
     private int[] imageArr;
@@ -33,7 +36,7 @@ public class UltraPagerAdapter extends PagerAdapter {
     @NonNull
     @Override
     public Object instantiateItem(@NonNull ViewGroup container, int position) {
-        View v = LayoutInflater.from(context).inflate(R.layout.my_view_pager_item,null);
+        View v = LayoutInflater.from(context).inflate(R.layout.my_view_pager_item, null);
         ImageView img = v.findViewById(R.id.img);
         img.setImageResource(imageArr[position]);
         container.addView(v);
@@ -44,5 +47,14 @@ public class UltraPagerAdapter extends PagerAdapter {
     public void destroyItem(ViewGroup container, int position, Object object) {
         LinearLayout view = (LinearLayout) object;
         container.removeView(view);
+    }
+
+    static class ViewHolder {
+        @BindView(R.id.img)
+        ImageView img;
+
+        ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
     }
 }
